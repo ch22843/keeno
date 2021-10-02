@@ -1,0 +1,21 @@
+.wall-image {
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 57%;
+    object-fit: cover;
+
+    filter: brightness(178%) saturate(85%) contrast(121%) invert(10%);
+    -webkit-filter: brightness(178%) saturate(85%) contrast(121%) invert(10%);
+    -moz-filter: brightness(178%) saturate(85%) contrast(121%) invert(10%);
+}
+
+.vh-full {
+    min-height: 100vh; 
+}
+
+.vh-80 {
+    min-height: 80vh; 
+}

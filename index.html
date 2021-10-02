@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML, CSS and JavaScript demo</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <div class="movie-container">
+        <div class="row">
+            <h1>Recent Movies</h1>
+        </div>
+        <div class="row">
+            <div class="movie-card">
+                <div class="movie-media" data-video-id="lGcJL6TG5cA">
+                    <img class="movie-media-image"
+                        src="https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/7e0PTVDdJ65eumyzagWiJKiw6MU/AAAABULF4GM3Eu4QYdeT7Q8p_Um4HCXPDkcqIKwSAknGuHCwzuNhbmJ2SvT8zVfz7CiHmiXeXKB4VfWTh7M31Zi5BmrnyKffZxzgYgq0fepsDZC3x_CKSPJYmL5Fm-v1.jpg?r=77c"
+                        alt="" />
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-media" data-video-id="MysGjRS9jFU">
+                    <img class="movie-media-image"
+                        src="https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/7e0PTVDdJ65eumyzagWiJKiw6MU/AAAABYUM-GaG4xPuXjpNkX4dDYnupVwyVYYHwZkpH_9pbyz6hvL7O5-BARll1qd-GbhqCfxwVAfHj0M7tt_W0n4__-AYCzf7FGXDo7C8gEHSuh6xxKU8KV-3idrQzE9c.jpg?r=be8"
+                        alt="" />
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="movie-media" data-video-id="hMANIarjT50">
+                    <img class="movie-media-image"
+                        src="https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/7e0PTVDdJ65eumyzagWiJKiw6MU/AAAABRUJMrw_5hdm7RDzOxMgf0PtDfJzAXW8ELG5cwgijcfwkEKaJVpgYnVDJtfrI-2I1BbCQxijc2eDYGPfPUjsuquuvWYPZ9GZwm0-1X1MgMf2exHYuSstI52-UQHCnqluWddbY4deKkDjjo7jF2fuVm9tsQdkzPFy1IrO_YPGyEp74lvAYHyD_jSrPvsWjdIXZqM8Re9d5eeZiX3nQ-vghfYNAj-wSacVg8oIjaXXMfS_J1YBW218mUWhuvQraUlYgh1-b1bMPb-3vURS.jpg?r=cfa"
+                        alt="" />
+                </div>
+            </div>
+            <div class="movie-card">
+                <div class="movie-media" data-video-id="ga0iTWXCGa0">
+                    <img class="movie-media-image"
+                        src="https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/7e0PTVDdJ65eumyzagWiJKiw6MU/AAAABVMjWKl0VOnXDNRYa4nbwotsUNlgbK_NsZ72yCM6hRK_iYRwJluXGesIOYJw9jAc-qQ2Xa6PF4yig4u3Kks0dHfQcFkdQCrs8kG5sXWgtRInwUWBYgkK4R3M8tuC.jpg?r=084"
+                        alt="" />
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-media" data-video-id="9GgxinPwAGc">
+                    <img class="movie-media-image"
+                        src="https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/7e0PTVDdJ65eumyzagWiJKiw6MU/AAAABa93QLbsfy7x3Mub9ul2_A2afAVDvm7hvD2wb44J_-r_fLMPoLz5EbIuV5gagOX6FgMAiyrS742r_48xBNBJvcS3WIg.webp?r=eab"
+                        alt="" />
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <div class="movie-media" data-video-id="XihA6GWIBdM">
+                    <img class="movie-media-image"
+                        src="https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/7e0PTVDdJ65eumyzagWiJKiw6MU/AAAABWnx2JI4Ssdr8tFncqOe4DrjqGxGpR315eLXtLwvFrJDJQfgkdyykuecHw6XvmDlZUJSXeffFbd6udImYtOaEoUvKsY.webp?r=2a0"
+                        alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="movie-preview-modal">
+        <div class="movie-modal-small">
+            <div class="modal-media">
+                <div id="player"></div>
+                <img class="modal-image"
+                    src="https://occ-0-2774-2773.1.nflxso.net/dnm/api/v6/7e0PTVDdJ65eumyzagWiJKiw6MU/AAAABWnx2JI4Ssdr8tFncqOe4DrjqGxGpR315eLXtLwvFrJDJQfgkdyykuecHw6XvmDlZUJSXeffFbd6udImYtOaEoUvKsY.webp?r=2a0"
+                    alt="" />
+            </div>
+            <div class="modal-bottom">
+                <div class="action-buttons">
+                    <div class="play round"></div>
+                    <div class="add round"></div>
+                    <div class="like round"></div>
+                    <div class="dislike round"></div>
+                    <div class="more round expand"></div>
+                </div>
+
+                <div class="rating">
+                    <div class="first-line">
+                        <span class="score">98% match</span>
+                    </div>
+                    <div class="second-line">
+                        <span class="maturity-rating">16+</span>
+                        <span class="duration">Season 5</span>
+                        <span class="badge">HD</span>
+                    </div>
+                </div>
+
+                <div class="evidence-list">
+                    <div class="evidence-item">
+                        <span class="evidence-text">Violent</span>
+                    </div>
+                    <div class="evidence-item">
+                        <span class="evidence-separator"></span>
+                        <span class="evidence-text">Exciting</span>
+                    </div>
+                    <div class="evidence-item">
+                        <span class="evidence-separator"></span>
+                        <spanclass="evidence-text">Epic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var t;
+        let modal = document.querySelector('.movie-modal-small');
+        let modal_image = document.querySelector('.modal-image');
+        let modal_bottom = document.querySelector('.modal-bottom');
+        let video_id ='lGcJL6TG5cA';
+
+        let player;
+        let playerData = {
+                height: '195',
+                width: '341',
+                // controls: 0,
+                videoId: 'lGcJL6TG5cA',
+                playerVars: {
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            };
+
+
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', playerData);
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            // event.target.playVideo();
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        // var done = false;
+        function onPlayerStateChange(event) {
+            // if (event.data == YT.PlayerState.PLAYING && !done) {
+            //     setTimeout(stopVideo, 6000);
+            //     done = true;
+            // }
+        }
+
+
+        function stopVideo() {
+            player.stopVideo();
+        }
+
+
+
+        document.addEventListener('mouseover', function (event) {
+            let target = event.target;
+
+            if (event.target.matches('.movie-media-image')) {
+
+                video_id = event.target.closest(".movie-media").getAttribute('data-video-id');
+
+                let image = target.getAttribute('src');
+                modal_image.setAttribute('src', image);
+                console.log(image)
+
+                let position = target.getBoundingClientRect();
+
+                modal.style.width = position.width + "px";
+                modal.style.left = position.left + "px";
+                modal.style.top = position.top + "px";
+
+                console.log(modal)
+
+                t = setTimeout(show, 400);
+            }
+
+        }, false);
+
+
+
+        // document.addEventListener('mouseout', function (event) {
+        //     console.log(event.target)
+        //     if (event.target.matches('.movie-media-image')) {
+        //         console.log(t)
+        //         clearTimeout(t); 
+        //     }
+
+        // }, false);
+
+        function show() {
+            modal.style.opacity = "1";
+            modal.style.zIndex = "2";
+            modal.style.transform = "scale(1.15)";
+            modal.style.transformOrigin = "center center";
+            modal.style.transition = "transform 250ms";
+            modal_bottom.style.transition = "opacity 250ms"
+            modal_bottom.style.opacity = "1";
+
+            modal_bottom.style.transition = "display 250ms"
+            modal_image.style.display = "none";
+
+            let playerDiv = document.getElementById('player');
+            playerDiv.style.display = "block";
+            player.loadVideoById(video_id);
+            player.playVideo();
+           
+        }
+
+        function hide(modal) {
+            modal.style.zIndex = "";
+            modal.style.transition = "transform 250ms";
+            modal.style.transformOrigin = "center center";
+            modal.style.transform = "scale(1)";
+            modal_bottom.style.transition = "none"
+            modal_bottom.style.opacity = "0";
+
+            modal.style.width = "0";
+            modal.style.left = "0";
+            modal.style.top = "0";
+
+            let playerDiv = document.getElementById('player');
+            playerDiv.style.display = "none";
+
+            stopVideo();
+        }
+
+        modal.addEventListener('mouseleave', function (event) {
+            let target = event.target;
+
+            if (event.target.matches('.movie-modal-small')) {
+                let modal = document.querySelector('.movie-modal-small');
+                hide(modal);
+            }
+
+        }, false);
+
+
+
+
+        
+
+
+
+    </script>
+
+</body>
+
+</html>

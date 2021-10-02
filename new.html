@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/new.css">
+    <link rel="stylesheet" href="assets/card.css">
+</head>
+
+<body>
+
+    <div class="container" id="movie-list"></div>
+
+
+    <div id="preview-modal" class="preview-modal">
+        <div class="layer"></div>
+        <div class="preview-media">
+
+            <div id="preview-media-player"></div>
+        </div>
+        <div class="preview-info">
+            <div class="preview-info-details">
+                <div class="first-line">
+                    <span class="preview-info-details-name">The Blacklist</span>
+                </div>
+                <div class="second-line">
+                    <span class="info">Season 5 - Trailer</span>
+                    <span class="year">2010</span>
+
+                    <span class="rating">7.5</span>
+                </div>
+            </div>
+            <div class="preview-action-buttons">
+                <div class="add round">
+                    <i class="bi bi-plus-lg"></i>
+                </div>
+                <div class="like round">
+                    <i class="bi bi-hand-thumbs-up"></i>
+                </div>
+                <div class="more round expand">
+                    <i class="bi bi-three-dots"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.cookie = "expires=Thu, 11 Jun 2070 11:11:11 UTC; path=/; SameSite=None; Secure";
+
+        let player;
+        let playerData = {
+            height: '195',
+            width: '341',
+            videoId: 'lGcJL6TG5cA',
+            playerVars: {
+                'playsinline': 1
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        };
+
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('preview-media-player', playerData);
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            // event.target.playVideo();
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        // var done = false;
+        function onPlayerStateChange(event) {
+            // if (event.data == YT.PlayerState.PLAYING && !done) {
+            //     setTimeout(stopVideo, 6000);
+            //     done = true;
+            // }
+        }
+
+
+        function stopVideo() {
+            player.stopVideo();
+        }
+
+        let movies = [
+            {
+                id: "1",
+                image: "snowpiercer.jpg",
+                video: "lGcJL6TG5cA",
+                name: "Snowpiercer",
+                info: "Trailer",
+                year: "2015",
+                rating: "9.2",
+                is_added: false,
+                is_liked: false
+            },
+            {
+                id: "2",
+                image: "kate.jpg",
+                video: "MysGjRS9jFU",
+                name: "Kate",
+                info: "Trailer",
+                year: "2015",
+                rating: "9.2",
+                is_added: false,
+                is_liked: false
+            },
+            {
+                id: "3",
+                image: "lacasadepapel.jpg",
+                video: "hMANIarjT50",
+                name: "La Casa de Papel",
+                info: "Trailer",
+                year: "2015",
+                rating: "9.2",
+                is_added: false,
+                is_liked: false
+            },
+            {
+                id: "4",
+                image: "lupin.jpg",
+                video: "ga0iTWXCGa0",
+                name: "Lupin",
+                info: "Trailer",
+                year: "2015",
+                rating: "9.2",
+                is_added: false,
+                is_liked: false
+            },
+            {
+                id: "2",
+                image: "vikings.webp",
+                video: "9GgxinPwAGc",
+                name: "Vikings",
+                info: "Trailer",
+                year: "2015",
+                rating: "9.2",
+                is_added: false,
+                is_liked: false
+            },
+            {
+                id: "2",
+                image: "theblacklist.webp",
+                video: "XihA6GWIBdM",
+                name: "The Blacklist",
+                info: "Trailer",
+                year: "2015",
+                rating: "9.2",
+                is_added: false,
+                is_liked: false
+            },
+        ];
+
+
+
+        let preview_media = document.querySelector('.preview-media');
+
+        let movie_list = findOneById('movie-list');
+
+        let html = "";
+
+        var div = document.createElement('div');
+        div.classList.add('row');
+
+
+
+        movies.forEach(movie => {
+            html += `<div class="col-sm-6 col-md-4 col-lg-3" data-id="${movie.id}">
+                            <div class="movie-card">
+                                <div class="movie-media" data-video-id="${movie.video}">
+                                    <img class="movie-media-image" 
+                                        src="assets/images/${movie.image}"
+                                        alt="" />
+                                </div>
+                            </div>
+                        </div>`;
+            div.innerHTML = html;
+        });
+
+        movie_list.appendChild(div);
+
+        let movie_cards = selectAll('.movie-card');
+
+        let modal = findOneById('preview-modal');
+        let preview_info = select('.preview-info');
+        let timeout;
+
+
+
+        movie_cards.forEach(card => {
+            card.addEventListener('mouseenter', e => {
+                let position = e.target.getBoundingClientRect();
+                // console.log(position);
+
+
+
+                timeout = setTimeout(() => {
+                    modal.style.width = position.width + "px";
+                    modal.style.left = position.left + "px";
+                    modal.style.top = position.top + "px";
+                    modal.style.opacity = "1";
+                    modal.style.transform = "scale(1.25)";
+                    modal.style.transformOrigin = "center center";
+                    modal.style.transition = "transform 250ms";
+                    preview_info.style.transition = "opacity 250ms"
+                    preview_info.style.opacity = "1";
+                    preview_info.style.display = "block";
+
+                    preview_info.style.transition = "display 250ms"
+                    let playerDiv = findOneById('preview-media-player');
+                    playerDiv.style.display = "block";
+
+                    let video_id = card.querySelector('.movie-media').getAttribute('data-video-id');
+
+                    player.loadVideoById(video_id);
+                    player.playVideo();
+                }, 1500);
+            });
+
+            card.addEventListener('mouseleave', e => {
+                clearTimeout(timeout); 
+            //     if (!modal.classList.contains('_showing')) {
+            //         // modal.removeAttribute('style');
+            //         clearTimeout(timeout); 
+            //     }
+            });
+        });
+
+
+        modal.addEventListener('mouseleave', e => {
+            clearTimeout(timeout);
+
+            modal.style.transition = "transform 250ms";
+            modal.style.transformOrigin = "center center";
+            modal.style.transform = "scale(1)";
+            preview_info.style.opacity = "0";
+            modal.style.transition = "display 250ms";
+            preview_info.style.display = "none";
+
+            modal.style.width = "0";
+            modal.style.left = "0";
+            modal.style.top = "0";
+            let playerDiv = findOneById('preview-media-player');
+            playerDiv.style.display = "none";
+
+            stopVideo();
+        });
+
+
+
+        function selectAll(selector) {
+            return document.querySelectorAll(selector);
+        }
+
+        function select(selector) {
+            return document.querySelector(selector);
+        }
+
+        function findOneById(id) {
+            return document.getElementById(id);
+        }
+
+        function log(prop) {
+            console.log(prop);
+        }
+
+
+    </script>
+</body>
+
+</html>
